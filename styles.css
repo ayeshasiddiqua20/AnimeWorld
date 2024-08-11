@@ -1,0 +1,388 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    animation: slideIn 1s ease-out;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+    animation: rotateLogo 2s infinite;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #cc0000; /* Demon Slayer Red */
+    animation: fadeIn 2s ease-out;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #008080; /* Jujutsu Kaisen Blue */
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff8c00; /* One Piece Gold */
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #ff8c00; /* Naruto Orange */
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateLogo {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hero Section Styling */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000000; /* Light grey background for a clean look */
+    padding: 0 20px;
+}
+
+.hero-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; /* Limit width for a more centered look */
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.hero-text {
+    flex: 1;
+    color: #cc0000; /* Dark grey for text */
+    max-width: 50%;
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #cc0000; /* Matching dark grey for consistency */
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    color: #008080; /* Slightly lighter grey */
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    background-color: #008080; /* Blue button */
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #008080; /* Darker blue on hover */
+    transform: scale(1.05);
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-text, .hero-image {
+        max-width: 100%;
+    }
+    
+    .hero-image img {
+        width: 80%;
+    }
+}
+
+
+/* Featured Anime Section Styling */
+.featured-anime {
+    padding: 50px 20px;
+    background-color: #000000;
+    text-align: center;
+}
+
+.featured-anime h2 {
+    font-size: 36px;
+    color: #ff8c00; /* One Piece Gold */
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.anime-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.anime-card img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.anime-info {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    color: #a8dadc; /* Jujutsu Kaisen Light Blue */
+}
+
+.anime-card:hover {
+    transform: translateY(-10px);
+}
+
+.anime-card:hover img {
+    transform: scale(1.1);
+}
+
+.anime-card:hover .anime-info {
+    transform: translateY(0);
+}
+
+.anime-info h3 {
+    font-size: 24px;
+    color: #cc0000; /* Demon Slayer Red */
+}
+
+.anime-info p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: #000000;
+    color: #f8f8f8;
+    padding: 60px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer .logo-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #008080;
+}
+
+.footer .contact span {
+    display: block;
+    margin: 10px 0;
+}
+
+.footer .socials a {
+    margin: 0 10px;
+    color: #f8f8f8;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer .socials a:hover {
+    color: #008080;
+}
+
+.footer .links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .links ul li {
+    margin-bottom: 10px;
+}
+
+.footer .links ul li a {
+    color: #f8f8f8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .links ul li a:hover {
+    color: #008080;
+}
+
+.footer .subscribe form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .subscribe input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer .subscribe-btn {
+    padding: 10px;
+    background-color: #008080;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer .subscribe-btn:hover {
+    background-color: #008080;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+    font-size: 14px;
+    border-top: 1px solid #333;
+}
+
+@media (max-width: 768px) {
+    .footer .footer-content {
+        flex-direction: column;
+    }
+
+    .footer .footer-section {
+        max-width: 100%;
+    }
+}
